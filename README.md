@@ -97,8 +97,10 @@ Repo: https://github.com/alifvir/wedding-tracker, branch `main`. Aplikasi statis
 Setelan project Cloudflare Pages:
 
 - Framework preset: None
-- Build command: kosongkan
+- Build command: `exit 0`
 - Build output directory: `/`
+
+Repo ini sudah berisi HTML, CSS, dan JavaScript final. Tidak ada dependensi yang perlu dipasang dan tidak ada proses generate, jadi build command cukup `exit 0`.
 
 Membuat project (sekali saja):
 
@@ -106,7 +108,7 @@ Membuat project (sekali saja):
 2. Klik Create, pilih Pages, lalu Connect to Git.
 3. Pilih repo `alifvir/wedding-tracker`, branch `main`.
 4. Nama project: `wedding-tracker`.
-5. Framework None, build command kosong, output directory `/`.
+5. Framework None, build command `exit 0`, output directory `/`.
 6. Klik Save and Deploy.
 
 Setelah terhubung, setiap `git push` ke `main` otomatis memicu build dan deploy baru, biasanya selesai dalam 1 sampai 2 menit.
