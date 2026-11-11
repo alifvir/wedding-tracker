@@ -90,7 +90,27 @@ Data disimpan di `localStorage` browser, bukan di file dan bukan di server. Arti
 
 ## Deploy gratis (opsional)
 
-Folder ini bisa langsung diunggah ke Cloudflare Pages:
+### GitHub Pages (sudah aktif)
+
+Situs live: https://alifvir.github.io/wedding-tracker/
+
+Repo: https://github.com/alifvir/wedding-tracker, branch `main`, folder root.
+
+Setiap `git push` ke `main` otomatis memicu build dan deploy baru, biasanya selesai dalam 1 menit. Kalau halaman masih versi lama, muat ulang dengan Ctrl+F5 karena cache CDN GitHub.
+
+Kalau perlu mengaktifkan ulang dari nol:
+
+1. Buka repo di GitHub, tab Settings.
+2. Menu Pages, bagian Build and deployment.
+3. Source: Deploy from a branch.
+4. Branch: `main`, folder: `/ (root)`.
+5. Save, lalu tunggu status build menjadi hijau.
+
+Catatan: data yang Anda input tetap tersimpan di browser masing-masing perangkat, bukan di GitHub. Data di situs live terpisah dari data saat membuka `index.html` langsung, karena alamatnya berbeda. Pindahkan lewat Ekspor dan Impor di halaman Setelan.
+
+### Cloudflare Pages
+
+Folder ini juga bisa langsung diunggah ke Cloudflare Pages:
 
 1. Buka Cloudflare Pages, pilih Direct Upload.
 2. Unggah seluruh isi folder `wedding-tracker`.
