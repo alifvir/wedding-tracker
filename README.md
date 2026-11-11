@@ -88,35 +88,32 @@ Data disimpan di `localStorage` browser, bukan di file dan bukan di server. Arti
 - Pindah perangkat harus lewat **Ekspor data JSON** lalu **Impor dari file**.
 - Ekspor dilakukan dari halaman Setelan, file tersimpan di folder unduhan.
 
-## Deploy gratis (opsional)
+## Deploy di Cloudflare Pages
 
-### GitHub Pages (sudah aktif)
+Alamat rencana: https://wedding-tracker.pages.dev
 
-Situs live: https://alifvir.github.io/wedding-tracker/
+Repo: https://github.com/alifvir/wedding-tracker, branch `main`. Aplikasi statis, tanpa build step.
 
-Repo: https://github.com/alifvir/wedding-tracker, branch `main`, folder root.
+Setelan project Cloudflare Pages:
 
-Setiap `git push` ke `main` otomatis memicu build dan deploy baru, biasanya selesai dalam 1 menit. Kalau halaman masih versi lama, muat ulang dengan Ctrl+F5 karena cache CDN GitHub.
+- Framework preset: None
+- Build command: kosongkan
+- Build output directory: `/`
 
-Kalau perlu mengaktifkan ulang dari nol:
+Membuat project (sekali saja):
 
-1. Buka repo di GitHub, tab Settings.
-2. Menu Pages, bagian Build and deployment.
-3. Source: Deploy from a branch.
-4. Branch: `main`, folder: `/ (root)`.
-5. Save, lalu tunggu status build menjadi hijau.
+1. Buka dash.cloudflare.com, menu Workers & Pages.
+2. Klik Create, pilih Pages, lalu Connect to Git.
+3. Pilih repo `alifvir/wedding-tracker`, branch `main`.
+4. Nama project: `wedding-tracker`.
+5. Framework None, build command kosong, output directory `/`.
+6. Klik Save and Deploy.
 
-Catatan: data yang Anda input tetap tersimpan di browser masing-masing perangkat, bukan di GitHub. Data di situs live terpisah dari data saat membuka `index.html` langsung, karena alamatnya berbeda. Pindahkan lewat Ekspor dan Impor di halaman Setelan.
+Setelah terhubung, setiap `git push` ke `main` otomatis memicu build dan deploy baru, biasanya selesai dalam 1 sampai 2 menit.
 
-### Cloudflare Pages
+Kalau Cloudflare menolak output directory `/`, pakai cara alternatif: build command `mkdir -p dist && cp index.html dist/ && cp -r assets dist/` dengan output directory `dist`.
 
-Folder ini juga bisa langsung diunggah ke Cloudflare Pages:
-
-1. Buka Cloudflare Pages, pilih Direct Upload.
-2. Unggah seluruh isi folder `wedding-tracker`.
-3. Selesai. Tidak perlu build command, tidak perlu environment variable.
-
-Data tetap tersimpan di browser masing-masing perangkat, bukan di Cloudflare.
+Data yang Anda input tetap tersimpan di browser masing-masing perangkat, bukan di Cloudflare. Data di situs live terpisah dari data saat membuka `index.html` langsung karena alamatnya berbeda. Pindahkan lewat Ekspor dan Impor di halaman Setelan.
 
 ## Struktur file
 
