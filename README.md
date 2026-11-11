@@ -90,7 +90,7 @@ Data disimpan di `localStorage` browser, bukan di file dan bukan di server. Arti
 
 ## Deploy di Cloudflare Pages
 
-Alamat rencana: https://wedding-tracker.pages.dev
+Alamat live: https://perfect-wedding.pages.dev
 
 Repo: https://github.com/alifvir/wedding-tracker, branch `main`. Aplikasi statis, tanpa build step.
 
@@ -107,7 +107,7 @@ Membuat project (sekali saja):
 1. Buka dash.cloudflare.com, menu Workers & Pages.
 2. Klik Create, pilih Pages, lalu Connect to Git.
 3. Pilih repo `alifvir/wedding-tracker`, branch `main`.
-4. Nama project: `wedding-tracker`.
+4. Nama project: `perfect-wedding`.
 5. Framework None, build command `exit 0`, output directory `/`.
 6. Klik Save and Deploy.
 
